@@ -21,3 +21,10 @@ class Garden_TasksView(generics.CreateAPIView):
         else:
             return Response(task.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class Garden_TaskView(generics.CreateAPIView):
+    def get(self, request, pk):
+        garden_task = get_object_or_404(Garden_Tasks, pk=pk)
+        data = Garden_TasksSerializer(garden_task).data
+        return Response(data)
+    
+
