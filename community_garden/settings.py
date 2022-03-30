@@ -29,6 +29,15 @@ SECRET_KEY = 'django-insecure-#=*23-v$oz9cv5ns13ly4ac%ezn&n711@8^+mpx6my2#4^%x(r
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
 # ALLOWED_HOSTS = ['*']
 
 
@@ -44,7 +53,8 @@ INSTALLED_APPS = [
     # My apps
     'api',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
