@@ -15,6 +15,7 @@ from pickle import FALSE
 import dj_database_url 
 import os
 
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-#=*23-v$oz9cv5ns13ly4ac%ezn&n711@8^+mpx6my2#4^%x(r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','safe-mountain-80968.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = ['*']
 
 
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware', #Fisrt in list
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,7 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -143,5 +145,11 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'api.User' 
+
+
+
+if "DYNO" in os.environ:
+    STATIC_ROOT = 'static'
+
 
 
