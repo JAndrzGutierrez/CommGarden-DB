@@ -7,11 +7,15 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 psycopg2 = "*"
-dj-database-url = "*"
-whitenoise = "*"
+pytz = "*"
 gunicorn = "*"
+django-environ = "*"
+whitenoise = "*"
+django-heroku = "*"
+django-cors-headers = "*"
+django-on-heroku = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"
