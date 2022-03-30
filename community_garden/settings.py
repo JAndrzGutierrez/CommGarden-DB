@@ -12,9 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from pickle import FALSE
-import dj_database_url 
+import dj_database_url
 import os
-
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -61,7 +60,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', #Fisrt in list
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Fisrt in list
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -69,8 +68,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
-    
+
+
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -158,12 +157,12 @@ REST_FRAMEWORK = {
     ]
 }
 
-AUTH_USER_MODEL = 'api.User' 
+AUTH_USER_MODEL = 'api.User'
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOWED_ORIGINS = [
+    "http://localhost:80",
+    "https://safe-mountain-80968.herokuapp.com/"
+]
 
 if "DYNO" in os.environ:
     STATIC_ROOT = 'static'
-
-
-
