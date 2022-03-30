@@ -60,8 +60,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware', #Fisrt in list
     'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', #Fisrt in list
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -160,6 +160,7 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = 'api.User' 
 
+CORS_ORIGIN_ALLOW_ALL = True
 
 if "DYNO" in os.environ:
     STATIC_ROOT = 'static'
