@@ -28,16 +28,10 @@ SECRET_KEY = 'django-insecure-#=*23-v$oz9cv5ns13ly4ac%ezn&n711@8^+mpx6my2#4^%x(r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = [  "http://localhost:8000", "https://safe-mountain-80968.herokuapp.com/"]
-
-CORS_ORIGIN_ALLOW_ALL = True
-
-=======
 ALLOWED_HOSTS = ['*']
 
 CORS_ORIGIN_ALLOW_ALL = True
->>>>>>> f1e4ef35e5de4153dd55785ce3dcc85fe26af279
+
 CORS_ALLOW_METHODS = [
     "DELETE",
     "GET",
@@ -62,7 +56,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'rest_framework.authtoken',
-    'corsheaders',
+    # 'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -167,12 +161,8 @@ REST_FRAMEWORK = {
 AUTH_USER_MODEL = 'api.User'
 
 CORS_ORIGIN_ALLOWED_ORIGINS = [
-<<<<<<< HEAD
     "http://localhost:8000",
-=======
-    "http://localhost:80",
->>>>>>> f1e4ef35e5de4153dd55785ce3dcc85fe26af279
-    "https://safe-mountain-80968.herokuapp.com/"
+    "https://safe-mountain-80968.herokuapp.com/",
 ]
 
 if "DYNO" in os.environ:
